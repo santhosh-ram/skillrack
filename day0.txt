@@ -1,0 +1,47 @@
+#Daily Challenge
+s=input().strip()
+for i in range(len(s)):
+    c=0
+    for j in s[i][::-1]:
+        if j.isdigit():
+            c+=1
+        else:
+            break
+    if c>0:
+        temp=c-len(str(int(s[i][-c:])))
+        print(s[i][:-c],"0"*temp,int(s[i][-c:])+i+1,sep="")
+    else:
+        print(s[i]+"1")
+
+ //Dailt test//
+#include<iostream>
+using namespace std;
+int main()
+{
+    int s,k;
+    cin >> s >> k;
+    int m1[s][k];
+    int m2[s][k];
+    for(int i=0;i<s;i++)
+    {
+        for(int j=0;j<k;j++)
+        {
+            cin >> m1[i][j];
+        }
+    }
+    for(int i=0;i<s;i++)
+    {
+        for(int j=0;j<k;j++)
+        {
+            cin >> m2[i][j];
+        }
+    }
+        for(int i=0;i<s;i++)
+    {
+        for(int j=0;j<k;j++)
+        {
+            cout >> m1[i][j]*m2[s-i-1][j];
+        }
+    }
+}  
+  
