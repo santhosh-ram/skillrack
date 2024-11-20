@@ -1,0 +1,21 @@
+#Daily test
+n=int(input())
+l=[chr(i) for i in range(65,65+n+1)]
+l.extend(l[:-1][::-1])
+print(*l,sep="")
+a=n;b=n
+z=[]
+for i in range(n):
+    x=[]
+    for j in range(len(l)):
+        if j>=a and j<=b:
+            x.append("#")
+            print("#",end="")
+        else:
+            x.append(l[j])
+            print(l[j],end="")
+    a-=1;b+=1
+    print()
+    z.append(x)
+for i in z[::-1]:
+    print(*i,sep="")
